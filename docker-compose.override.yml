@@ -1,5 +1,5 @@
 services:
-  app:
+  yonchan:
     build: 
       target: dev
     image: yonchan:development
