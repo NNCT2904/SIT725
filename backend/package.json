@@ -1,0 +1,23 @@
+{
+  "name": "sit725",
+  "version": "1.0.0",
+  "description": "Practical repository for SIT725 Deakin University",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NNCT2904/SIT725.git"
+  },
+  "author": "Thanh Nguyen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NNCT2904/SIT725/issues"
+  },
+  "homepage": "https://github.com/NNCT2904/SIT725#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
