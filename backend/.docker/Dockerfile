@@ -1,4 +1,4 @@
-FROM node:14.17-buster-slim as base
+FROM node:16.14-buster-slim as base
 WORKDIR /src
 
 #############
@@ -10,7 +10,5 @@ COPY package.json package-lock.json ./
 RUN npm install
 
 COPY . .
-
-EXPOSE 3000
 
 CMD [ "npm", "start" ]
