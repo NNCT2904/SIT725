@@ -1,3 +1,4 @@
+// Example: /adder?num1=1&num2=2
 const adder = (req, res) => {
     var num1 = parseInt(req.query.num1);
     var num2 = parseInt(req.query.num2);
