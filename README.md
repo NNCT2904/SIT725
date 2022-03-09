@@ -8,16 +8,16 @@ Practical repository for SIT725 Deakin University
   - [Onboarding](#onboarding)
     - [Clone this repo](#clone-this-repo)
     - [Install node dependencies](#install-node-dependencies)
-    - [Launch Application](#launch-application)
+    - [Launch Application for development](#launch-application-for-development)
 
 ## Requirements
 - [Node 16+](https://nodejs.org/en/)
-- npm 8+
+- npm 8+, comes with [Node](https://nodejs.org/en/) installation
 - Nice to have: Docker 20+, Docker Compose 2+
-  - For macOS and Windows: go Install [Docker Desktop](https://www.docker.com/products/docker-desktop "docker desktop"). This contains both Docker and Docker Compose.
+  - For macOS and Windows: go Install [Docker Desktop](https://www.docker.com/products/docker-desktop "docker desktop"). This contains both Docker and Docker Compose
   - For Linux Master Race:
     - Install [Docker Engine](https://docs.docker.com/engine/install/#server "docker engine")
-    - [Linux post-installation steps](https://docs.docker.com/engine/install/linux-postinstall/ "Linux post-installation steps").
+    - [Linux post-installation steps](https://docs.docker.com/engine/install/linux-postinstall/ "Linux post-installation steps")
     - Install [Docker Compose](https://docs.docker.com/compose/install/ "docker compose")
 
 ## Onboarding
@@ -31,10 +31,13 @@ git clone git@github.com:NNCT2904/SIT725.git
 # Navigate to backend folder
 cd SIT725/backend/
 
+# If you have nvm and multiple Node versions
+nvm use #
+
 # Then install dependencies
 npm install 
 ```
-### Launch Application
+### Launch Application for development
 After installing dependencies, launch the application locally with:
 ```shell
 # In the backend folder
@@ -45,3 +48,5 @@ Or launch the application with docker compose
 # In the Root folder
 docker-compose up app
 ```
+
+The Application will be launched in [localhost:3000](http://localhost:3000/ "[docker compose](http://localhost:3000/)"). Saving any changes will trigger `nodemon` to hot reload the application, no need to stop.
