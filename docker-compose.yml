@@ -1,0 +1,7 @@
+services:
+  app:
+    ports:
+      - 3000:3000
+    build:
+      context: "./backend"
+      dockerfile: ".docker/Dockerfile"

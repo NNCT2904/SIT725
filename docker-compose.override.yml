@@ -1,0 +1,10 @@
+services:
+  app:
+    build: 
+      target: dev
+    image: yonchan:development
+    container_name: yonchan_development
+    restart: unless-stopped
+    volumes:
+      - ./backend:/src
+      - ./backend:/public
