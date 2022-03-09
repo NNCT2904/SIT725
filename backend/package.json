@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Practical repository for SIT725 Deakin University",
   "main": "index.js",
+  "engines": {
+    "node": "^16.14",
+    "npm": "^8.3.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon src/index.js"
