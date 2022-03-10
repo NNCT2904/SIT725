@@ -21,10 +21,20 @@ Practical repository for SIT725 Deakin University
     - Install [Docker Compose](https://docs.docker.com/compose/install/ "docker compose")
 
 ## Onboarding
-Follow belows to install and launch the application in the localhost 
+Follow below guides to install and launch the application in the localhost.
+### Create your MongoDB instance
+Follow [this guide](https://docs.mongodb.com/guides/server/drivers/ "Connect to MongoDB") to create an account, cluster and connection string.
 ### Clone this repo
 ```shell
 git clone git@github.com:NNCT2904/SIT725.git
+```
+### Create the config file
+After cloning the repository, create an `.env` config file and filling the values:
+- `MONGODB_URI`: the connection string to MongoDB
+
+For example:
+```shell
+MONGODB_URI=YourConnectionStringHere
 ```
 ### Install node dependencies
 ```shell
@@ -49,4 +59,4 @@ Or launch the application with docker compose
 docker-compose up app
 ```
 
-The Application will be launched in [localhost:3000](http://localhost:3000/ "[docker compose](http://localhost:3000/)"). Saving any changes will trigger `nodemon` to hot reload the application, no need to stop.
+The Application will be launched in [localhost:3000](http://localhost:3000/ "[docker compose](http://localhost:3000/)"). Saving any changes will trigger `nodemon` to hot reload the application, no need to stop the application or container.
