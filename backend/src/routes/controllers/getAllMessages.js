@@ -1,4 +1,4 @@
-const { Message } = require('../../Schema/schema');
+const { Message } = require('../../Schema/index');
 
 const getAllMessages = async (req, res) => {
   const messages = await Message.find({});

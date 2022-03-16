@@ -1,4 +1,4 @@
-const Message = require('../../Schema/models/MessageSchema');
+const { Message } = require('../../Schema');
 
 const sendMessage = async (req, res) => {
     const message = new Message(req.body);
