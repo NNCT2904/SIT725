@@ -10,8 +10,7 @@ var PORT = 3000;
 var app = exress();
 app.use(cors());
 app.use(exress.static('./public'));
-app.use(appRouter);
-app.use(bodyParser.json());
+app.use('/api',appRouter);
 
 // Connect to MongoDB
 mongoose.Promise = global.Promise;
