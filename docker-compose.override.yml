@@ -4,6 +4,8 @@ services:
       target: dev
     image: yonchan:development
     container_name: yonchan_development
+    env_file:
+      - './backend/.env'
     restart: unless-stopped
     volumes:
       - ./backend:/src

@@ -6,7 +6,9 @@ Practical repository for SIT725 Deakin University
   - [Table of contents](#table-of-contents)
   - [Requirements](#requirements)
   - [Onboarding](#onboarding)
+    - [Create your MongoDB instance](#create-your-mongodb-instance)
     - [Clone this repo](#clone-this-repo)
+    - [Create the config file](#create-the-config-file)
     - [Install node dependencies](#install-node-dependencies)
     - [Launch Application for development](#launch-application-for-development)
 
@@ -56,7 +58,7 @@ npm start
 Or launch the application with docker compose
 ```shell
 # In the Root folder
-docker-compose up app
+docker-compose up
 ```
 
 The Application will be launched in [localhost:3000](http://localhost:3000/ "[docker compose](http://localhost:3000/)"). Saving any changes will trigger `nodemon` to hot reload the application, no need to stop the application or container.
