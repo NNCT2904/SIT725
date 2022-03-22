@@ -10,27 +10,67 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans"
+    />
     <title>A title</title>
   </head>
 
   <body>
-    <div class="container">
-      <div class="row">
-        <div class="col s12">
-          <h1 id="heading" class="center-align">SIT 725</h1>
+    <header>
+      <nav class="css-nav">
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo">
+            <img src="./assets/amogus.svg" class="css-logo circle" alt="logo" />
+          </a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="https://www.linkedin.com/in/ncng">Linkedin</a></li>
+          </ul>
         </div>
-        <div class="col s12 center-align">
-          <a class="waves-effect waves-light btn" onclick="changeText()"
-            >Change Text</a
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        <div class="row">
+          <div
+            class="badge-base LI-profile-badge"
+            data-locale="en_US"
+            data-size="large"
+            data-theme="dark"
+            data-type="HORIZONTAL"
+            data-vanity="ncng"
+            data-version="v1"
           >
+            <a
+              class="badge-base__link LI-simple-link"
+              href="https://au.linkedin.com/in/ncng?trk=profile-badge"
+              ></a
+            >
+          </div>
+          <p class="flow-text mainText">I place a dot before my name to identify which recruiter is a bot, or a real people</p>
+        </div>
+        <div class="row center" style="height:150px;">
+          <img src="assets/sus.png" alt="very sussy img" class="css-sussyimg circle responsive-img" >
         </div>
       </div>
-    </div>
+    </main>
+
     <!-- Compiled and minified JavaScript -->
     <script
       crossorigin="anonymous"
       src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"
     ></script>
+    <script
+      src="https://platform.linkedin.com/badges/js/profile.js"
+      async
+      defer
+      type="text/javascript"
+    ></script>
+    <!-- socket IO Served by the server -->
+    <script src="/socket.io/socket.io.js"></script>
     <script src="./js/script.js"></script>
   </body>
 </html>

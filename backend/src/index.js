@@ -1,30 +1,31 @@
 require('dotenv').config();
 var cors = require('cors');
 var exress = require('express');
-var mongoose = require('mongoose');
-var bodyParser = require('body-parser');
+var mongoConnect = require('./mongoConnect');
+var sockets = require('./socketio');
+
+var app = exress();
+
+var http = require('http').createServer(app);
+var io = require('socket.io')(http);
 
 var appRouter = require('./routes/routes.js');
 var PORT = 3000;
 
-var app = exress();
 app.use(cors());
 app.use(exress.static('./public'));
 app.use('/api',appRouter);
 
 // Connect to MongoDB
-mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGODB_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-}).then(() => {
-    console.log('Connected to MongoDB');
-}, (err) => {
-    console.log('Cannot connect to MongoDb: ' + err);
-});
+mongoConnect(process.env.MONGODB_URI);
 
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+sockets(io);
+
+http.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}:`);
+    console.log(`http://localhost:${PORT}`);
 });
 
 module.exports = app;
+module.exports = http;
+module.exports = io;
