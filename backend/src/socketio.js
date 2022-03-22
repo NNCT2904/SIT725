@@ -5,6 +5,10 @@ const sockets = (io) => {
     socket.on("disconnect", () => {
       console.log(`id ${socket.id} disconnected`);
     });
+    socket.on("serverCheckSocket", () => {
+      const id = socket.id;
+      io.emit("clientCheckSocket", id);
+    });
   });
 };
 

@@ -1,34 +1,50 @@
 .css-nav {
-    background-color: rgba(10, 25, 41, 0.72);
-    box-shadow: rgb(19, 47, 76) 0px -1px 1px inset;
-    backdrop-filter: blur(20px);
-    align-items: center;
+  background-color: rgba(10, 25, 41, 0.72);
+  box-shadow: rgb(19, 47, 76) 0px -1px 1px inset;
+  backdrop-filter: blur(20px);
+  align-items: center;
 }
+
+.page-footer{
+  background-color: rgba(10, 25, 41, 0.72);
+  box-shadow: rgb(19, 47, 76) 0px -1px 1px inset;
+  backdrop-filter: blur(20px);
+  vertical-align: middle;
+}
+
+.css-gitLogo{
+  height: 20px; 
+  padding-right: 15px;
+}
+
 .css-logo {
-    height: 4rem;
-    width: auto;
-    padding-top: 5px;
-    padding-left: 15px;
+  height: 4rem;
+  width: auto;
+  padding-top: 5px;
+  padding-left: 15px;
+}
+
+.css-button {
+  background-color: rgb(0, 127, 255);
+  border-radius: 0.5rem;
 }
 
 img.css-sussyimg {
-    background-color: rgba(10, 25, 41, 0.72);
-    box-shadow: rgb(19, 47, 76) 0px -1px 1px inset;
-    backdrop-filter: blur(20px);
-    height: 100%;
-    padding-top: 5px; 
-    padding-left: 15px;
+  background-color: rgba(10, 25, 41, 0.72);
+  box-shadow: rgb(19, 47, 76) 0px -1px 1px inset;
+  backdrop-filter: blur(20px);
+  height: 100%;
 }
 
-body{
-    background-color: rgb(0, 30, 60);
-    color: rgb(255, 255, 255);
-    font-family: 'IBM Plex Sans';
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
+body {
+  background-color: rgb(0, 30, 60);
+  color: rgb(255, 255, 255);
+  font-family: "IBM Plex Sans";
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
 main {
-    flex: 1 0 auto;
+  flex: 1 0 auto;
 }
