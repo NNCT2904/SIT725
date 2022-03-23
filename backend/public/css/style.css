@@ -29,6 +29,11 @@
   border-radius: 0.5rem;
 }
 
+.css-messages {
+  width: max-content;
+  max-width: 50vw;
+}
+
 img.css-sussyimg {
   background-color: rgba(10, 25, 41, 0.72);
   box-shadow: rgb(19, 47, 76) 0px -1px 1px inset;
