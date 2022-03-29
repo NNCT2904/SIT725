@@ -1,16 +1,22 @@
-const { Message } = require('../../Schema');
+const { Message } = require("../../Schema");
 
 const sendMessage = async (req, res) => {
-    const message = new Message(req.body);
+  const message = new Message(req.body);
 
-    message.timeStamp = new Date().toString();
+  if (!message.text || message.text == '') {
+    return res.status(400).json({
+      error: "Message text is required",
+    });
+  }
 
-    try {
-        await message.save();
-        res.status(201).send(message);
-    } catch (error) {
-        res.status(500).send(error);
-    }
-}
+  message.timeStamp = new Date().toString();
+
+  console.log({message});
+
+  return await message
+    .save()
+    .then((message) => res.status(201).json(message))
+    .catch((err) => res.status(500).json(err));
+};
 
 module.exports = sendMessage;

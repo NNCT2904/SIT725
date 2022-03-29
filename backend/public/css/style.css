@@ -29,9 +29,13 @@
   border-radius: 0.5rem;
 }
 
-.css-messages {
+.css-messages-card {
   width: max-content;
   max-width: 50vw;
+}
+
+.css-message-text {
+  white-space: pre-wrap;
 }
 
 img.css-sussyimg {

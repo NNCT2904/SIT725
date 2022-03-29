@@ -1,13 +1,9 @@
-const { Message } = require('../../Schema/index');
+const { Message } = require("../../Schema/index");
 
 const getAllMessages = async (req, res) => {
-  const messages = await Message.find({});
-
-  try {
-    res.status(200).send(messages);
-  } catch (error) {
-    res.status(500).send(error);
-  }
+  return await Message.find({})
+    .then((messages) => res.status(200).json(messages))
+    .catch((err) => res.status(500).json(err));
 };
 
 module.exports = getAllMessages;

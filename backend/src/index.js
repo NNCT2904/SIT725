@@ -19,7 +19,7 @@ app.use('/api',appRouter);
 // Connect to MongoDB
 mongoConnect(process.env.MONGODB_URI);
 
-sockets(io);
+// sockets(io);
 
 http.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}:`);

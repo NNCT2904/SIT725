@@ -24,6 +24,7 @@
   </head>
 
   <body>
+    <!---Navbar-->
     <header>
       <div class="navbar-fixed">
         <nav class="css-nav">
@@ -55,7 +56,22 @@
             <i class="material-icons left">emoji_people</i>Check Socket ID!
           </a>
         </div>
-        <!-- Cards -->
+        <div class="row">
+          <form class="col s12">
+            <div class="row">
+              <div class="input-field col s12">
+                <textarea id="inputTextArea" class="materialize-textarea" style="color: white;"></textarea>
+                <label for="inputTextArea">Textarea</label>
+              </div>
+            </div>
+            <button id="sendMessageButton" class="css-button blue waves-effect waves-light btn" type="submit">Submit
+              <i class="material-icons right">send</i>
+            </button>
+          </form>
+          
+        </div>
+
+        <!-- Messages area -->
         <div class="row">
           <div id="messagesSection" class="col">
 
