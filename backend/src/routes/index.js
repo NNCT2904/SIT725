@@ -2,8 +2,7 @@ var app = require('express');
 var appRouter = app.Router();
 var adder = require('./controllers/adder');
 var serverChecker = require('./controllers/serverCheck');
-var sendMessage = require('./controllers/sendMessage');
-var getAllMessages = require('./controllers/getAllMessages');
+var { getAllMessages , sendMessage } = require('./controllers/MessageController');
 var bodyParser = require('body-parser');
 
 appRouter.use(bodyParser.json());
