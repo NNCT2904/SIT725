@@ -9,7 +9,7 @@ var app = exress();
 var http = require('http').createServer(app);
 var io = require('socket.io')(http);
 
-var appRouter = require('./routes/routes.js');
+var appRouter = require('./Routes');
 var PORT = 3000;
 
 app.use(cors());

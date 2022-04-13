@@ -1,4 +1,4 @@
-const { Message } = require("./Schema");
+const { Message } = require("./Models");
 
 const sockets = (io) => {
   io.on("connection", async (socket) => {
