@@ -17,8 +17,6 @@ const sendMessage = async (req, res) => {
 
   message.timeStamp = new Date().toString();
 
-  console.log({ message });
-
   return await message
     .save()
     .then((message) => res.status(200).json(message))
