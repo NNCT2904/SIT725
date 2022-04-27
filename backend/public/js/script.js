@@ -1,4 +1,4 @@
-// A message list would look like this:
+// A message list would looks like this:
 // [
 //   {
 //     timeStamp: '03/23/22 1:00',
@@ -13,18 +13,20 @@
 // ];
 
 const newMessage = () => {
+
   let text = $('#inputTextArea').val();
 
   let message = {text}
 
-  console.log(message);
+  // sendMessage(message);
 
-  sendMessage(message);
+  socket.emit("newMessage", message);
+
+  $('#inputTextArea').val("");
 };
 
-const listMessage = (messageList) => {
-  messageList.forEach((message) => {
-    let template = `<div class="css-messages-card card blue darken-4">
+const appendMessage = (message) => {
+  const template = `<div class="css-messages-card card blue darken-4">
     <div class="card-content white-text">
       <p> No.${message._id}</p>
       <br />
@@ -34,9 +36,7 @@ const listMessage = (messageList) => {
       <a href="#">Reply</a>
     </div>
   </div>`;
-
-    $("#messagesSection").append(template);
-  });
+  $("#messagesSection").prepend(template);
 };
 
 // Button Functionalities
@@ -48,43 +48,44 @@ const getRandomNumberBetween = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1) + min);
 };
 
-// Api functionalities
-const requestMessages = () => {
-  $.get("/api/getAllMessages", (messageList) => {
-    if (messageList.length > 0) {
-      listMessage(messageList);
-    }
-  });
-};
+// REST Api functionalities
+// const requestMessages = () => {
+//   $.get("/api/getAllMessages", (messageList) => {
+//     if (messageList.length > 0) {
+//       appendMessage(messageList);
+//     }
+//   });
+// };
 
-const sendMessage = (message) => {
-  console.log(JSON.stringify(message));
-  $.ajax({
-    url: "/api/sendMessage",
-    contentType: "application/json",
-    dataType: "json",
-    data: JSON.stringify(message),
-    processData: false,
-    type: "POST",
-    success: (result) => {
-      alert("Message sent!");
-    },
-  });
-};
+// const sendMessage = (message) => {
+//   console.log(JSON.stringify(message));
+//   $.ajax({
+//     url: "/api/sendMessage",
+//     contentType: "application/json",
+//     dataType: "json",
+//     data: JSON.stringify(message),
+//     processData: false,
+//     type: "POST",
+//     success: (result) => {
+//       alert("Message sent!");
+//     },
+//   });
+// };
 
 // Socket Functionalities
-// const socket = io("http://localhost:3000");
-// socket.on("clientCheckSocket", (data) => {
-//   if (data) {
-//     alert(`Your Socket ID is ${data}`);
-//   } else {
-//     alert("Socket not connected");
-//   }
-// });
+const socket = io("http://localhost:3000");
+socket.on("clientCheckSocket", (data) => {
+  if (data) {
+    alert(`Your Socket ID is ${data}`);
+  } else {
+    alert("Socket not connected");
+  }
+});
 
-// socket.on("messageUpdate", (messages) => {
-//   listMessage(messages);
-// });
+socket.on("messageUpdate", (message) => {
+  // console.log('called', message);
+  appendMessage(message);
+});
 
 // document
 $(document).ready(() => {
@@ -96,5 +97,5 @@ $(document).ready(() => {
 
   $(".modal").modal();
 
-  requestMessages();
+  // requestMessages();
 });
