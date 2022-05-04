@@ -31,7 +31,7 @@ Follow [this guide](https://docs.mongodb.com/guides/server/drivers/ "Connect to 
 git clone git@github.com:NNCT2904/SIT725.git
 ```
 ### Create the config file
-After cloning the repository, create an `.env` config file and filling the values:
+After cloning the repository, navigate to the `backend` folder and create an `.env` config file, filling the values:
 - `MONGODB_URI`: the connection string to MongoDB
 
 For example:
